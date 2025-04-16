@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>କବିସମ୍ରାଟ ଉପେନ୍ଦ୍ର ଭଞ୍ଜ - ସମ୍ପୂର୍ଣ୍ଣ ବିବରଣୀ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff5733;
+            --secondary-color: #0a2e3d;
+            --accent-color: #00d4ff;
+            --light-color: #f8f9fb;
+            --dark-color: #0f1419;
+            --text-light: #ffffff;
+            --text-dark: #1f252b;
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Oriya', 'Arial', sans-serif;
+        }
+
+        body {
+            background: var(--light-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 7px;
+            border: 2px solid var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #e64d2e, #00b7e6);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            animation: slideIn 1.2s ease-out;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotateGlow 20s linear infinite;
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .content {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+            padding: 3rem;
+            margin-top: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .content h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 0.8rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        .content h2:hover::after {
+            width: 100%;
+        }
+
+        .content p, .content ul {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin: 1.5rem 0;
+            color: #444;
+        }
+
+        .content ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .content ul li::before {
+            content: '\f02d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+        }
+
+        .content ul li:hover {
+            transform: translateX(10px);
+            color: var(--secondary-color);
+        }
+
+        .quiz-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .quiz-button i {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.5);
+        }
+
+        #quiz-section {
+            display: none;
+            margin-top: 3rem;
+            background: linear-gradient(180deg, #ecf0f1 0%, #dfe4ea 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        #quiz-section.active {
+            display: block;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .quiz-container h3 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .quiz-question {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .quiz-question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .quiz-question p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .quiz-option {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .quiz-option:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .quiz-option input {
+            margin-right: 1rem;
+            accent-color: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        #submit-quiz {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            color: var(--text-light);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            display: block;
+            margin: 2rem auto;
+            transition: var(--transition);
+        }
+
+        #submit-quiz:hover {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(255, 87, 51, 0.5);
+        }
+
+        #quiz-result {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .dark-mode {
+            background: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .dark-mode .content {
+            background: linear-gradient(180deg, #1e2529 0%, #12171b 100%);
+        }
+
+        .dark-mode .content p, .dark-mode .content ul {
+            color: #ccc;
+        }
+
+        .dark-mode .content h2 {
+            color: var(--accent-color);
+        }
+
+        .dark-mode #quiz-section {
+            background: linear-gradient(180deg, #2a2f35 0%, #1e2529 100%);
+        }
+
+        .dark-mode .quiz-question {
+            background: #2a2f35;
+        }
+
+        .dark-mode .quiz-question p {
+            color: var(--accent-color);
+        }
+
+        .dark-mode #quiz-result {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--text-light);
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1a1e23;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .content {
+                padding: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            .content p, .content ul {
+                font-size: 1.1rem;
+            }
+
+            .quiz-button, #submit-quiz {
+                padding: 0.8rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .quiz-question p {
+                font-size: 1rem;
+            }
+
+            .quiz-option {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-open"></i> କବିସମ୍ରାଟ ଉପେନ୍ଦ୍ର ଭଞ୍ଜ</h1>
+        </header>
+        <div class="content">
+            <h2>ଜୀବନୀ</h2>
+            <p>କବିସମ୍ରାଟ ଉପେନ୍ଦ୍ର ଭଞ୍ଜ (ଜନ୍ମ: ପ୍ରାୟ ୧୬୭୦ – ମୃତ୍ୟୁ: ପ୍ରାୟ ୧୭୪୦) ଓଡ଼ିଆ ସାହିତ୍ୟର ସବୁଠାରୁ ପ୍ରସିଦ୍ଧ କବିମାନଙ୍କ ମଧ୍ୟରୁ ଜଣେ। ସେ ଓଡ଼ିଶାର ଘଟଗାଁ (ବର୍ତ୍ତମାନର ମୟୂରଭଞ୍ଜ ଜିଲ୍ଲା)ରେ ଜନ୍ମଗ୍ରହଣ କରିଥିଲେ। ତାଙ୍କ ପିତା ରାଜା ଧନଞ୍ଜୟ ଭଞ୍ଜ ଏବଂ ମାତା ଲକ୍ଷ୍ମୀ ବାଇ ଥିଲେ। ଉପେନ୍ଦ୍ର ଭଞ୍ଜ ରାଜପରିବାରରେ ଜନ୍ମ ନେଇଥିଲେ ଏବଂ ସେ ସଂସ୍କୃତ, ଓଡ଼ିଆ ଓ ଅନ୍ୟାନ୍ୟ ଭାଷାରେ ଶିକ୍ଷା ଲାଭ କରିଥିଲେ। ତାଙ୍କୁ ‘କବିସମ୍ରାଟ’ ଉପାଧିରେ ସମ୍ମାନିତ କରାଯାଇଛି, ଯାହା ତାଙ୍କର ଅସାଧାରଣ ସାହିତ୍ୟିକ ପ୍ରତିଭାକୁ ସୂଚାଏ।</p>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଜୀବନ ସମ୍ପର୍କରେ ଅଧିକ ଐତିହାସିକ ତଥ୍ୟ ଉପଲବ୍ଧ ନାହିଁ, କିନ୍ତୁ ଜନଶ୍ରୁତି ଅନୁସାରେ ସେ ଜଣେ ସଫଳ ରାଜକୁମାର, ଯୋଦ୍ଧା ଏବଂ କବି ଥିଲେ। ତାଙ୍କର ରଚନାଗୁଡ଼ିକ ଓଡ଼ିଶାର ସାଂସ୍କୃତିକ ଓ ଧାର୍ମିକ ଜୀବନରେ ଗଭୀର ପ୍ରଭାବ ପକାଇଛି। ସେ ମୁଖ୍ୟତଃ ତାଙ୍କର ପ୍ରେମ ଓ ଶୃଙ୍ଗାର ରସରେ ପରିପୂର୍ଣ୍ଣ କବିତା ପାଇଁ ପ୍ରସିଦ୍ଧ। ତାଙ୍କର ରଚନା ଶୈଳୀ ଅଳଙ୍କାର ଓ ସଙ୍ଗୀତମୟ ଥିଲା, ଯାହା ଓଡ଼ିଆ ସାହିତ୍ୟରେ ଏକ ନୂତନ ମାନଦଣ୍ଡ ସ୍ଥାପନ କରିଥିଲା।</p>
+
+            <h2>ସାହିତ୍ୟିକ ଅବଦାନ</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ସାହିତ୍ୟ ଓଡ଼ିଆ ଭାଷାରେ ଶୃଙ୍ଗାର ରସ, ଅଳଙ୍କାର ଓ ସଙ୍ଗୀତମୟତାରେ ସମୃଦ୍ଧ। ତାଙ୍କର ରଚନା ସଂସ୍କୃତ ସାହିତ୍ୟର ପ୍ରଭାବ ସହ ଓଡ଼ିଆ ଲୋକସାହିତ୍ୟର ମିଶ୍ରଣ। ସେ ମୁଖ୍ୟତଃ କବିତା ଓ ଗୀତିକବିତା ରଚନା କରିଥିଲେ, ଯାହା ଓଡ଼ିଶାର ଗ୍ରାମାଞ୍ଚଳରେ ଆଜି ମଧ୍ୟ ଗାନ କରାଯାଏ। ତାଙ୍କର ରଚନାରେ ପ୍ରେମ, ପ୍ରକୃତି, ଭକ୍ତି ଓ ସାମାଜିକ ଚେତନା ପ୍ରତିଫଳିତ ହୋଇଛି। ତାଙ୍କର ଶବ୍ଦଚୟନ ଓ ଅଳଙ୍କାର ପ୍ରୟୋଗ ଓଡ଼ିଆ ସାହିତ୍ୟକୁ ଏକ ଅନନ୍ୟ ସ୍ଥାନ ଦେଇଛି।</p>
+
+            <h2>କବିତା</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ କବିତା ଶୃଙ୍ଗାର ରସରେ ପରିପୂର୍ଣ୍ଣ ଏବଂ ଅଳଙ୍କାରପ୍ରଧାନ। ତାଙ୍କର ରଚନାରେ ସଂସ୍କୃତ ଶବ୍ଦ ଓ ଓଡ଼ିଆ ଲୋକଭାଷାର ମିଶ୍ରଣ ଦେଖାଯାଏ। ତାଙ୍କର ପ୍ରମୁଖ କାବ୍ୟ ସଂକଳନ ଓ ରଚନା:</p>
+            <ul>
+                <li><strong>ବୈଦେହୀଶ ବିଳାସ</strong>: ଏହା ତାଙ୍କର ସର୍ବଶ୍ରେଷ୍ଠ ରଚନା, ଯାହା ରାମଚରିତ ଉପରେ ଆଧାରିତ। ଏହି କାବ୍ୟରେ ଶୃଙ୍ଗାର ରସ ଓ ଭକ୍ତିର ସମନ୍ୱୟ ଦେଖାଯାଏ।</li>
+                <li><strong>ଲାବଣ୍ୟବତୀ</strong>: ଏକ ପ୍ରେମମୂଳକ କାବ୍ୟ, ଯାହା ଲାବଣ୍ୟବତୀ ଓ ଚିତ୍ରସେନଙ୍କ ପ୍ରେମ କାହାଣୀକୁ ବର୍ଣ୍ଣନା କରେ।</li>
+                <li><strong>ରସିକ ହରିବଲ୍ଲଭ</strong>: ଶୃଙ୍ଗାର ଓ ଭକ୍ତିର ମିଶ୍ରଣ ସହ ଏକ ଜନପ୍ରିୟ କାବ୍ୟ।</li>
+                <li><strong>କୋଟି ବ୍ରହ୍ମାଣ୍ଡ ସୁନ୍ଦରୀ</strong>: ଏକ ଅଳଙ୍କାରପ୍ରଧାନ କାବ୍ୟ, ଯାହା ନାୟିକାଙ୍କ ସୌନ୍ଦର୍ଯ୍ୟକୁ ବର୍ଣ୍ଣନା କରେ।</li>
+                <li><strong>ପ୍ରେମ ସୁଧାନିଧି</strong>: ପ୍ରେମର ବିଭିନ୍ନ ଭାବନାକୁ ଚିତ୍ରଣ କରୁଥିବା ଏକ କାବ୍ୟ।</li>
+                <li><strong>ରସ ପଞ୍ଚକ</strong>: ଶୃଙ୍ଗାର ରସରେ ପରିପୂର୍ଣ୍ଣ ଏକ କ୍ଷୁଦ୍ର କାବ୍ୟ।</li>
+                <li><strong>ଚିତ୍ରକାବ୍ୟ ବନ୍ଧୋଦୟ</strong>: ଅଳଙ୍କାର ଓ ଶବ୍ଦଚାତୁରୀରେ ପରିପୂର୍ଣ୍ଣ ଏକ ରଚନା।</li>
+                <li><strong>କେଳିକାବ୍ୟ</strong>: ପ୍ରେମ ଓ ସୌନ୍ଦର୍ଯ୍ୟରେ ଆଧାରିତ ଏକ ଗୀତିକାବ୍ୟ।</li>
+            </ul>
+            <p>ଏହା ବ୍ୟତୀତ ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଅନେକ ଗୀତ, ଚଉପଦୀ, ଚଉତିଶା ଓ ଭଜନ ଓଡ଼ିଶାର ଲୋକସାହିତ୍ୟରେ ଜନପ୍ରିୟ।</p>
+
+            <h2>ଉପନ୍ୟାସ</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଦ୍ୱାରା କୌଣସି ଆଧୁନିକ ଶୈଳୀରେ ଉପନ୍ୟାସ ରଚିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ରଚନା ମୁଖ୍ୟତଃ କାବ୍ୟ ଓ ଗୀତିକବିତାରେ ସୀମିତ ଥିଲା। ତାଙ୍କର ‘ବୈଦେହୀଶ ବିଳାସ’ ଓ ‘ଲାବଣ୍ୟବତୀ’ରେ କାହାଣୀମୂଳକ ଉପାଦାନ ଥିଲେ ମଧ୍ୟ, ଏଗୁଡ଼ିକ ଉପନ୍ୟାସ ଶ୍ରେଣୀରେ ପଡ଼େ ନାହିଁ।</p>
+
+            <h2>ଗଦ୍ୟ</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଦ୍ୱାରା କୌଣସି ସ୍ୱତନ୍ତ୍ର ଗଦ୍ୟ ରଚନା କରାଯାଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ସାହିତ୍ୟ ମୁଖ୍ୟତଃ କାବ୍ୟ ଓ ଗୀତିକବିତା ଶୈଳୀରେ ଲିଖିତ। ତାଙ୍କର କେତେକ ରଚନାରେ ବର୍ଣ୍ଣନାତ୍ମକ ଅଂଶ ଗଦ୍ୟ ଶୈଳୀରେ ଥିଲେ ମଧ୍ୟ, ସେଗୁଡ଼ିକ କାବ୍ୟାତ୍ମକ ଥିଲା।</p>
+
+            <h2>ଗଳ୍ପ</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଦ୍ୱାରା ସ୍ୱତନ୍ତ୍ର ଛୋଟଗଳ୍ପ ରଚିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ‘ଲାବଣ୍ୟବତୀ’ ଓ ‘ବୈଦେହୀଶ ବିଳାସ’ ଭଳି କାବ୍ୟରେ କାହାଣୀମୂଳକ ଉପାଦାନ ଥିଲା, ଯାହା ପ୍ରେମ ଓ ସାମାଜିକ ଜୀବନକୁ ଚିତ୍ରଣ କରୁଥିଲା।</p>
+
+            <h2>ଏକାଙ୍କିକା</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଦ୍ୱାରା କୌଣସି ଏକାଙ୍କିକା ବା ନାଟକ ରଚିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ସାହିତ୍ୟ ମୁଖ୍ୟତଃ କାବ୍ୟ ଓ ଗୀତିକବିତା ଶୈଳୀରେ ସୀମିତ ଥିଲା।</p>
+
+            <h2>ସମ୍ମାନ ଓ ଉତ୍ତରାଧିକାରୀ</h2>
+            <p>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କୁ ‘କବିସମ୍ରାଟ’ ଉପାଧି ଦିଆଯାଇଥିଲା, ଯାହା ତାଙ୍କର ଅସାଧାରଣ ସାହିତ୍ୟିକ ଅବଦାନକୁ ସୂଚାଏ। ତାଙ୍କର ରଚନା ଓଡ଼ିଶାର ସାଂସ୍କୃତିକ ଓ ସାହିତ୍ୟିକ ଜୀବନରେ ଏକ ଅମୂଲ୍ୟ ସମ୍ପଦ। ତାଙ୍କର ‘ବୈଦେହୀଶ ବିଳାସ’ ଓଡ଼ିଆ ସାହିତ୍ୟରେ ଏକ ମାଇଲଖୁଣ୍ଟ ସ୍ଥାପନ କରିଛି। ତାଙ୍କର ଗୀତ ଓ ଚଉପଦୀ ଓଡ଼ିଶାର ଗ୍ରାମାଞ୍ଚଳରେ ଆଜି ମଧ୍ୟ ଜନପ୍ରିୟ। ତାଙ୍କର ଶୈଳୀ ଓ ଅଳଙ୍କାର ପ୍ରୟୋଗ ଓଡ଼ିଆ ସାହିତ୍ୟକୁ ଏକ ନୂତନ ଦିଗ ଦେଇଛି।</p>
+
+            <a href="#" class="quiz-button" onclick="showQuiz()"><i class="fab fa-leanpub"></i> କୁଇଜ୍ ଆରମ୍ଭ କରନ୍ତୁ</a>
+
+            <div id="quiz-section" class="quiz-container">
+                <h3>ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କ ଜୀବନୀ ଓ ସାହିତ୍ୟ ଉପରେ କୁଇଜ୍</h3>
+                <div id="quiz-questions"></div>
+                <button id="submit-quiz">ଉତ୍ତର ଜମା ଦିଅନ୍ତୁ</button>
+                <div id="quiz-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showQuiz() {
+            const quizSection = document.getElementById('quiz-section');
+            quizSection.classList.add('active');
+            loadQuiz();
+            window.scrollTo({ top: quizSection.offsetTop, behavior: 'smooth' });
+        }
+
+        function loadQuiz() {
+            const questions = [
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର ଜନ୍ମସ୍ଥାନ କେଉଁଠାରେ?",
+                    options: ["କଟକ", "ଘଟଗାଁ", "ପୁରୀ", "ଭୁବନେଶ୍ୱର"],
+                    answer: "ଘଟଗାଁ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କୁ କେଉଁ ଉପାଧି ଦିଆଯାଇଥିଲା?",
+                    options: ["ଭକ୍ତକବି", "ଆଦିକବି", "କବିସମ୍ରାଟ", "ସ୍ୱଭାବକବି"],
+                    answer: "କବିସମ୍ରାଟ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର ସର୍ବଶ୍ରେଷ୍ଠ ରଚନାର ନାମ କଣ?",
+                    options: ["ଲାବଣ୍ୟବତୀ", "ବୈଦେହୀଶ ବିଳାସ", "ରସିକ ହରିବଲ୍ଲଭ", "ପ୍ରେମ ସୁଧାନିଧି"],
+                    answer: "ବୈଦେହୀଶ ବିଳାସ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର କେଉଁ ରଚନା ପ୍ରେମମୂଳକ କାହାଣୀ ଉପରେ ଆଧାରିତ?",
+                    options: ["ବୈଦେହୀଶ ବିଳାସ", "ଲାବଣ୍ୟବତୀ", "ରସ ପଞ୍ଚକ", "ଚିତ୍ରକାବ୍ୟ ବନ୍ଧୋଦୟ"],
+                    answer: "ଲାବଣ୍ୟବତୀ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର ରଚନାରେ କେଉଁ ରସର ପ୍ରାଧାନ୍ୟ ଦେଖାଯାଏ?",
+                    options: ["ଭକ୍ତି ରସ", "ଶୃଙ୍ଗାର ରସ", "ବୀର ରସ", "ଶାନ୍ତ ରସ"],
+                    answer: "ଶୃଙ୍ଗାର ରସ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର କେଉଁ ରଚନା ଅଳଙ୍କାରପ୍ରଧାନ?",
+                    options: ["ବୈଦେହୀଶ ବିଳାସ", "ରସିକ ହରିବଲ୍ଲଭ", "ଚିତ୍ରକାବ୍ୟ ବନ୍ଧୋଦୟ", "ପ୍ରେମ ସୁଧାନିଧି"],
+                    answer: "ଚିତ୍ରକାବ୍ୟ ବନ୍ଧୋଦୟ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର ପିତାଙ୍କ ନାମ କଣ ଥିଲା?",
+                    options: ["ନାରାୟଣ ଭଞ୍ଜ", "ଧନଞ୍ଜୟ ଭଞ୍ଜ", "କୃଷ୍ଣ ଭଞ୍ଜ", "ବିଶ୍ୱନାଥ ଭଞ୍ଜ"],
+                    answer: "ଧନଞ୍ଜୟ ଭଞ୍ଜ"
+                },
+                {
+                    question: "ଉପେନ୍ଦ୍ର ଭଞ୍ଜଙ୍କର କେଉଁ ରଚନା ରାମଚରିତ ଉପରେ ଆଧାରିତ?",
+                    options: ["ଲାବଣ୍ୟବତୀ", "ବୈଦେହୀଶ ବିଳାସ", "କୋଟି ବ୍ରହ୍ମାଣ୍ଡ ସୁନ୍ଦରୀ", "ରସ ପଞ୍ଚକ"],
+                    answer: "ବୈଦେହୀଶ ବିଳାସ"
+                }
+            ];
+
+            let quizHTML = '';
+            questions.forEach((q, index) => {
+                quizHTML += `<div class="quiz-question">
+                    <p>${index + 1}. ${q.question}</p>
+                    ${

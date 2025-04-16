@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଅତିବଡ଼ୀ ଜଗନ୍ନାଥ ଦାସ - ସମ୍ପୂର୍ଣ୍ଣ ବିବରଣୀ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff5733;
+            --secondary-color: #0a2e3d;
+            --accent-color: #00d4ff;
+            --light-color: #f8f9fb;
+            --dark-color: #0f1419;
+            --text-light: #ffffff;
+            --text-dark: #1f252b;
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Oriya', 'Arial', sans-serif;
+        }
+
+        body {
+            background: var(--light-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 7px;
+            border: 2px solid var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #e64d2e, #00b7e6);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            animation: slideIn 1.2s ease-out;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotateGlow 20s linear infinite;
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .content {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+            padding: 3rem;
+            margin-top: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .content h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 0.8rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        .content h2:hover::after {
+            width: 100%;
+        }
+
+        .content p, .content ul {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin: 1.5rem 0;
+            color: #444;
+        }
+
+        .content ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .content ul li::before {
+            content: '\f02d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+        }
+
+        .content ul li:hover {
+            transform: translateX(10px);
+            color: var(--secondary-color);
+        }
+
+        .quiz-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .quiz-button i {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .quiz-button:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.5);
+        }
+
+        #quiz-section {
+            display: none;
+            margin-top: 3rem;
+            background: linear-gradient(180deg, #ecf0f1 0%, #dfe4ea 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        #quiz-section.active {
+            display: block;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .quiz-container h3 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .quiz-question {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .quiz-question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .quiz-question p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .quiz-option {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .quiz-option:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .quiz-option input {
+            margin-right: 1rem;
+            accent-color: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        #submit-quiz {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            color: var(--text-light);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            display: block;
+            margin: 2rem auto;
+            transition: var(--transition);
+        }
+
+        #submit-quiz:hover {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(255, 87, 51, 0.5);
+        }
+
+        #quiz-result {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .dark-mode {
+            background: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .dark-mode .content {
+            background: linear-gradient(180deg, #1e2529 0%, #12171b 100%);
+        }
+
+        .dark-mode .content p, .dark-mode .content ul {
+            color: #ccc;
+        }
+
+        .dark-mode .content h2 {
+            color: var(--accent-color);
+        }
+
+        .dark-mode #quiz-section {
+            background: linear-gradient(180deg, #2a2f35 0%, #1e2529 100%);
+        }
+
+        .dark-mode .quiz-question {
+            background: #2a2f35;
+        }
+
+        .dark-mode .quiz-question p {
+            color: var(--accent-color);
+        }
+
+        .dark-mode #quiz-result {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--text-light);
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1a1e23;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .content {
+                padding: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            .content p, .content ul {
+                font-size: 1.1rem;
+            }
+
+            .quiz-button, #submit-quiz {
+                padding: 0.8rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .quiz-question p {
+                font-size: 1rem;
+            }
+
+            .quiz-option {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-open"></i> ଅତିବଡ଼ୀ ଜଗନ୍ନାଥ ଦାସ</h1>
+        </header>
+        <div class="content">
+            <h2>ଜୀବନୀ</h2>
+            <p>ଅତିବଡ଼ୀ ଜଗନ୍ନାଥ ଦାସ (୧୪୯୧–୧୫୫୦) ଓଡ଼ିଆ ସାହିତ୍ୟରେ ଜଣେ ମହାନ କବି ଓ ଭକ୍ତ ଥିଲେ। ସେ ପଞ୍ଚସଖା (ବଳରାମ ଦାସ, ଅନନ୍ତ ଦାସ, ଯଶୋବନ୍ତ ଦାସ, ଅଚ୍ୟୁତାନନ୍ଦ ଦାସ ଓ ଜଗନ୍ନାଥ ଦାସ) ମଧ୍ୟରେ ଅନ୍ୟତମ ଥିଲେ। ଜଗନ୍ନାଥ ଦାସ ୧୪୯୧ ମସିହାରେ ରାଧାଷ୍ଟମୀ ତିଥିରେ ପୁରୀ ଜିଲ୍ଲାର କପିଳେଶ୍ୱରପୁର ସାସନରେ ଏକ କୌଶିକୀ ଗୋତ୍ରୀୟ ବ୍ରାହ୍ମଣ ପରିବାରରେ ଜନ୍ମଗ୍ରହଣ କରିଥିଲେ। ତାଙ୍କ ପିତା ଭଗବାନ ଦାସ ଉତ୍କଳରେ ଭାଗବତ ପାଠକ ଥିଲେ। ତାଙ୍କ ମାତା ପଦ୍ମାବତୀ ଦେବୀ ଜଣେ ଧାର୍ମିକ ମହିଳା ଥିଲେ। ଭଗବାନ ଦାସଙ୍କ ଭାଗବତ ପାଠର ବ୍ୟାଖ୍ୟାରେ ପ୍ରସନ୍ନ ହୋଇ ଉତ୍କଳର ତତ୍କାଳୀନ ରାଜା ପୁରୁଷୋତ୍ତମ ଦେବ ତାଙ୍କୁ ‘ପୁରାଣ ପଣ୍ଡା’ ଉପାଧି ପ୍ରଦାନ କରିଥିଲେ। ଭଗବାନ ଦାସ ତାଙ୍କ ପୁତ୍ର ଜଗନ୍ନାଥଙ୍କୁ ମଧ୍ୟ ପୁରାଣ ପାଠ ଶିକ୍ଷା ଦେଇଥିଲେ।</p>
+            <p>ଜଗନ୍ନାଥ ଦାସ ଶ୍ରୀଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ସମସାମୟିକ ଥିଲେ। ପୁରୀର କଳ୍ପବଟ ତଳେ ତାଙ୍କର ଶ୍ରୀଚୈତନ୍ୟଙ୍କ ସହ ସାକ୍ଷାତ ହୋଇଥିଲା, ଯାହା ପରେ ଏକ ଆଧ୍ୟାତ୍ମିକ ବନ୍ଧନରେ ପରିଣତ ହୋଇଥିଲା। ଶ୍ରୀଚୈତନ୍ୟ ତାଙ୍କୁ ‘ଅତିବଡ଼ୀ’ ଉପାଧିରେ ସମ୍ମାନିତ କରିଥିଲେ, ଯାହା ତାଙ୍କ ସାହିତ୍ୟିକ ଓ ଆଧ୍ୟାତ୍ମିକ ମହାନତାକୁ ସୂଚିତ କରେ। ଜଗନ୍ନାଥ ଦାସ ପୁରୀରେ ବଡ଼ ଓଡ଼ିଆ ମଠ ସ୍ଥାପନ କରିଥିଲେ ଏବଂ ଉତ୍କଳୀୟ ବୈଷ୍ଣବ ସମ୍ପ୍ରଦାୟ ‘ଅତିବଡ଼ୀ ସମ୍ପ୍ରଦାୟ’ର ପ୍ରତିଷ୍ଠାତା ଭାବେ ପରିଚିତ। ସେ ୧୫୫୦ ମସିହାରେ ପରଲୋକ ଗମନ କରିଥିଲେ।</p>
+
+            <h2>ସାହିତ୍ୟିକ ଅବଦାନ</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସ ଓଡ଼ିଆ ସାହିତ୍ୟରେ ଭକ୍ତିରସ ଓ ଆଧ୍ୟାତ୍ମିକତାର ଏକ ଅନନ୍ୟ ସ୍ଥାନ ସୃଷ୍ଟି କରିଥିଲେ। ତାଙ୍କ ରଚନାଗୁଡ଼ିକ ଓଡ଼ିଆ ଭାଷାର ମାନକୀକରଣରେ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଭୂମିକା ଗ୍ରହଣ କରିଥିଲା। ତାଙ୍କର ପ୍ରମୁଖ ରଚନା ‘ଓଡ଼ିଆ ଭାଗବତ’ ଓଡ଼ିଶାରେ ଏକ ସାଂସ୍କୃତିକ ଓ ଧାର୍ମିକ ପ୍ରତୀକ ଭାବେ ପରିଗଣିତ। ଏହା ଓଡ଼ିଶାର ଅନେକ ଗୃହରେ ପୂଜା ପାଉଥିଲା ଏବଂ ଗ୍ରାମଗୁଡ଼ିକରେ ‘ଭାଗବତ ଟୁଙ୍ଗୀ’ରେ ଏହାର ପାଠ କରାଯାଉଥିଲା। ତାଙ୍କ ରଚନାରେ ଭକ୍ତି, ଜ୍ଞାନ ଓ ସାମାଜିକ ସଚେତନତାର ସମ୍ମିଶ୍ରଣ ରହିଛି। ତାଙ୍କ ଅନେକ ପଦ ଓଡ଼ିଶାରେ ଲୋକପ୍ରିୟ ପ୍ରବଚନ ଭାବେ ବ୍ୟବହୃତ ହୁଏ।</p>
+
+            <h2>କବିତା</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସଙ୍କର ପ୍ରମୁଖ ରଚନା ‘ଓଡ଼ିଆ ଭାଗବତ’ ଏକ କାବ୍ୟାତ୍ମକ ରଚନା ଯାହା ଭାଗବତ ପୁରାଣର ଓଡ଼ିଆ ଅନୁବାଦ। ଏହା ୧୨ଟି ସ୍କନ୍ଧରେ ବିଭକ୍ତ ଏବଂ ପ୍ରତ୍ୟେକ ସ୍କନ୍ଧରେ ୧୦ରୁ ୩୦ଟି ଅଧ୍ୟାୟ ରହିଛି। ପ୍ରତ୍ୟେକ ଅଧ୍ୟାୟରେ ୫୦ରୁ ୩୦୦ ପଦ ରହିଛି। ଏହା ଭକ୍ତିରସରେ ପରିପୂର୍ଣ୍ଣ ଏବଂ ସାଧାରଣ ଜନତାଙ୍କ ପାଇଁ ସରଳ ଓଡ଼ିଆ ଭାଷାରେ ରଚିତ। ତାଙ୍କର ଅନ୍ୟାନ୍ୟ କାବ୍ୟ ରଚନା ମଧ୍ୟରେ:</p>
+            <ul>
+                <li><strong>ଗଜସ୍ତୁତି</strong>: ଶ୍ରୀଗଣେଶଙ୍କ ଉପରେ ରଚିତ ଭକ୍ତିମୂଳକ କବିତା।</li>
+                <li><strong>ଆର୍ତ୍ତକୋଇଳୀ</strong>: ଭଗବାନଙ୍କ ପ୍ରତି ଆତ୍ମସମର୍ପଣର ଭାବନା ପ୍ରକାଶ କରୁଥିବା କବିତା।</li>
+                <li><strong>ତୁଳାଭିନା</strong>: ଭକ୍ତି ଓ ଦାର୍ଶନିକ ଚିନ୍ତାଧାରାର ସମନ୍ୱୟ।</li>
+            </ul>
+
+            <h2>ଉପନ୍ୟାସ</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସଙ୍କ ଦ୍ୱାରା କୌଣସି ମୌଳିକ ଉପନ୍ୟାସ ରଚିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ସାହିତ୍ୟ ମୁଖ୍ୟତଃ ଭକ୍ତିମୂଳକ କବିତା, ଗଦ୍ୟ ଓ ଧାର୍ମିକ ରଚନାରେ ସୀମିତ ଥିଲା। ‘ଓଡ଼ିଆ ଭାଗବତ’ରେ କିଛି କାହାଣୀମୂଳକ ଅଂଶ ଥିଲେ ମଧ୍ୟ, ଏହାକୁ ଆଧୁନିକ ଉପନ୍ୟାସ ଶୈଳୀରେ ବର୍ଗୀକୃତ କରାଯାଇ ନଥାଏ।</p>
+
+            <h2>ଗଦ୍ୟ</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସଙ୍କର ଗଦ୍ୟ ରଚନା ମୁଖ୍ୟତଃ ‘ଓଡ଼ିଆ ଭାଗବତ’ରେ ଦେଖାଯାଏ, ଯେଉଁଥିରେ ସେ ସରଳ ଓ ପ୍ରଭାବଶାଳୀ ଓଡ଼ିଆ ଭାଷାରେ ଭଗବତ ପୁରାଣର ବ୍ୟାଖ୍ୟା କରିଛନ୍ତି। ଏହା ଓଡ଼ିଆ ଗଦ୍ୟର ପ୍ରାରମ୍ଭିକ ରୂପ ଭାବେ ଗଣାଯାଏ। ତାଙ୍କର ଗଦ୍ୟ ଭକ୍ତି ଓ ଜ୍ଞାନର ସମନ୍ୱୟ ଘଟାଇଥାଏ। ତାଙ୍କର ଅନ୍ୟ ଗଦ୍ୟ ରଚନା ସ୍ୱତନ୍ତ୍ର ଭାବେ ପ୍ରକାଶିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ।</p>
+
+            <h2>ଗଳ୍ପ</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସଙ୍କ ଦ୍ୱାରା ସ୍ୱତନ୍ତ୍ର ଛୋଟଗଳ୍ପ ବା କାହାଣୀ ରଚିତ ହୋଇଥିବାର କୌଣସି ତଥ୍ୟ ଉପଲବ୍ଧ ନାହିଁ। ‘ଓଡ଼ିଆ ଭାଗବତ’ରେ ଅନେକ ଧାର୍ମିକ ଓ ନୈତିକ କାହାଣୀ ରହିଛି, ଯାହା ଜନସାଧାରଣଙ୍କୁ ଶିକ୍ଷା ଓ ଭକ୍ତିର ବାର୍ତ୍ତା ଦେଇଥାଏ। ତଥାପି, ଏହାକୁ ଆଧୁନିକ ଗଳ୍ପ ଶୈଳୀରେ ବର୍ଗୀକୃତ କରାଯାଇ ନଥାଏ।</p>
+
+            <h2>ଏକାଙ୍କିକା</h2>
+            <p>ଜଗନ୍ନାଥ ଦାସଙ୍କ ଦ୍ୱାରା କୌଣସି ଏକାଙ୍କିକା ବା ନାଟକ ରଚିତ ହୋଇଥିବାର ପ୍ରମାଣ ନାହିଁ। ତାଙ୍କର ସାହିତ୍ୟ ମୁଖ୍ୟତଃ ଭକ୍ତିମୂଳକ କବିତା ଓ ଗଦ୍ୟରେ ସୀମିତ ଥିଲା। ତାଙ୍କର ‘ଓଡ଼ିଆ ଭାଗବତ’ରେ କିଛି ସଂଳାପମୂଳକ ଅଂଶ ଥିଲେ ମଧ୍ୟ, ଏହାକୁ ନାଟକୀୟ ରଚନା ଭାବେ ବିବେଚନା କରାଯାଇ ନଥାଏ।</p>
+
+            <a href="#quiz-section" class="quiz-button"><i class="fab fa-leanpub"></i> କୁଇଜ୍ ଦିଅନ୍ତୁ</a>
+
+            <div id="quiz-section" class="quiz-container">
+                <h3>ଜଗନ୍ନାଥ ଦାସଙ୍କ ଜୀବନୀ ଓ ରଚନା ଉପରେ କୁଇଜ୍</h3>
+                <div class="quiz-question">
+                    <p>୧. ଜଗନ୍ନାଥ ଦାସ କେଉଁ ସମୟରେ ଜନ୍ମଗ୍ରହଣ କରିଥିଲେ?</p>
+                    <div class="quiz-option"><input type="radio" name="q1" value="a"> କ) ୧୪୯୧</div>[](https://www.detailedpedia.com/wiki-Atibadi_Jagannath_Das)
+                    <div class="quiz-option"><input type="radio" name="q1" value="b"> ଖ) ୧୫୫୦</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="c"> ଗ) ୧୪୫୦</div>
+                    <div class="quiz-option"><input type="radio" name="q1" value="d"> ଘ) ୧୬୦୦</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୨. ଜଗନ୍ନାଥ ଦାସଙ୍କୁ କିଏ ‘ଅତିବଡ଼ୀ’ ଉପାଧି ଦେଇଥିଲେ?</p>
+                    <div class="quiz-option"><input type="radio" name="q2" value="a"> କ) ପୁରୁଷୋତ୍ତମ ଦେବ</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="b"> ଖ) ଶ୍ରୀଚୈତନ୍ୟ ମହାପ୍ରଭୁ</div>[](https://www.wikiwand.com/en/articles/Jagannatha_Dasa_%28Odia_poet%29)
+                    <div class="quiz-option"><input type="radio" name="q2" value="c"> ଗ) ଭଗବାନ ଦାସ</div>
+                    <div class="quiz-option"><input type="radio" name="q2" value="d"> ଘ) ବଳରାମ ଦାସ</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୩. ଜଗନ୍ନାଥ ଦାସଙ୍କର ପ୍ରମୁଖ ରଚନା କ’ଣ?</p>
+                    <div class="quiz-option"><input type="radio" name="q3" value="a"> କ) ଗୀତଗୋବିନ୍ଦ</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="b"> ଖ) ଓଡ଼ିଆ ଭାଗବତ</div>[](https://en.m.wikipedia.org/wiki/Jagannatha_Dasa_%28Odia_poet%29)
+                    <div class="quiz-option"><input type="radio" name="q3" value="c"> ଗ) ମହାଭାରତ</div>
+                    <div class="quiz-option"><input type="radio" name="q3" value="d"> ଘ) ରାମାୟଣ</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୪. ଜଗନ୍ନାଥ ଦାସ କେଉଁ ସମ୍ପ୍ରଦାୟର ପ୍ରତିଷ୍ଠାତା ଥିଲେ?</p>
+                    <div class="quiz-option"><input type="radio" name="q4" value="a"> କ) ଗୌଡ଼ୀୟ ବୈଷ୍ଣବ</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="b"> ଖ) ଅତିବଡ଼ୀ ସମ୍ପ୍ରଦାୟ</div>[](https://en.wikipedia.org/wiki/Jagannatha_Dasa)
+                    <div class="quiz-option"><input type="radio" name="q4" value="c"> ଗ) ଶୈବ ସମ୍ପ୍ରଦାୟ</div>
+                    <div class="quiz-option"><input type="radio" name="q4" value="d"> ଘ) ଶାକ୍ତ ସମ୍ପ୍ରଦାୟ</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୫. ‘ଓଡ଼ିଆ ଭାଗବତ’ରେ କେତୋଟି ସ୍କନ୍ଧ ରହିଛି?</p>
+                    <div class="quiz-option"><input type="radio" name="q5" value="a"> କ) ୧୦</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="b"> ଖ) ୧୨</div>[](https://en.wikipedia.org/wiki/Jagannatha_Dasa_%28Odia_poet%29)
+                    <div class="quiz-option"><input type="radio" name="q5" value="c"> ଗ) ୧୫</div>
+                    <div class="quiz-option"><input type="radio" name="q5" value="d"> ଘ) ୧୮</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୬. ଜଗନ୍ନାଥ ଦାସଙ୍କ ଜନ୍ମସ୍ଥାନ କେଉଁଠାରେ?</p>
+                    <div class="quiz-option"><input type="radio" name="q6" value="a"> କ) କଟକ</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="b"> ଖ) ଭୁବନେଶ୍ୱର</div>
+                    <div class="quiz-option"><input type="radio" name="q6" value="c"> ଗ) କପିଳେଶ୍ୱରପୁର</div>[](https://en.bharatpedia.org/wiki/Jagannatha_Dasa_%28Odia_poet%29)
+                    <div class="quiz-option"><input type="radio" name="q6" value="d"> ଘ) ବାଲେଶ୍ୱର</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୭. ଜଗନ୍ନାଥ ଦାସଙ୍କ ପିତାଙ୍କ ନାମ କ’ଣ ଥିଲା?</p>
+                    <div class="quiz-option"><input type="radio" name="q7" value="a"> କ) ଭଗବାନ ଦାସ</div>[](https://en.wikipedia.org/wiki/Jagannatha_Dasa_%28Odia_poet%29)
+                    <div class="quiz-option"><input type="radio" name="q7" value="b"> ଖ) ବଳରାମ ଦାସ</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="c"> ଗ) ଅନନ୍ତ ଦାସ</div>
+                    <div class="quiz-option"><input type="radio" name="q7" value="d"> ଘ) ଯଶୋବନ୍ତ ଦାସ</div>
+                </div>
+                <div class="quiz-question">
+                    <p>୮. ଜଗନ୍ନାଥ ଦାସଙ୍କର କେଉଁ ରଚନା ଗଣେଶଙ୍କ ଉପରେ ରଚିତ?</p>
+                    <div class="quiz-option"><input type="radio" name="q8" value="a"> କ) ଗଜସ୍ତୁତି</div>[](https://destinationodisha.com/odia-poets-their-creations/)
+                    <div class="quiz-option"><input type="radio" name="q8" value="b"> ଖ) ଆର୍ତ୍ତକୋଇଳୀ</div>
+                    <div class="quiz-option"><input type="radio" name="q8" value="c"> ଗ) ତୁଳାଭିନା</div>
+                    <div class="quiz-option"><input type="radio" name="q8" value="d"> ଘ) ଭାଗବତ</div>
+                </div>
+                <button id="submit-quiz">ଉତ୍ତର ଦାଖଲ କରନ୍ତୁ</button>
+                <div id="quiz-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.quiz-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const quizSection = document.getElementById('quiz-section');
+            quizSection.classList.add('active');
+            quizSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b',
+                q6: 'c',
+                q7: 'a',
+                q8: 'a'
+            };
+
+            let score = 0;
+            const totalQuestions = Object.keys(answers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            let message = `ଆପଣ ପାଇଛନ୍ତି ${score}/${totalQuestions} ସ୍କୋର! `;
+            if (score === totalQuestions) {
+                message += 'ଅତି ଉତ୍ତମ! ଆପଣ ଜଗନ୍ନାଥ ଦାସଙ୍କ ବିଷୟରେ ସମ୍ପୂର୍ଣ୍ଣ ଜ୍ଣାତ।';
+            } else if (score >= totalQuestions / 2) {
+                message += 'ଭଲ ପ୍ରୟାସ! ଆପଣ ଅନେକ କଥା ଜାଣିଛନ୍ତି।';
+            } else {
+                message += 'ଆହୁରି ଅଧ୍ୟୟନ କରନ୍ତୁ। ଜଗନ୍ନାଥ ଦାସଙ୍କ ବିଷୟରେ ଆହୁରି ଜାଣନ୍ତୁ।';
+            }
+
+            resultDiv.textContent = message;
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Dark mode toggle
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
