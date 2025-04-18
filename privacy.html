@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଗୋପନୀୟତା ନୀତି - ଓଡ଼ିଆଟିଚ୍</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+:root {
+    --primary-color: #ff5733;
+    --secondary-color: #0a2e3d;
+    --accent-color: #00d4ff;
+    --light-color: #f8f9fb;
+    --dark-color: #0f1419;
+    --text-light: #ffffff;
+    --text-dark: #1f252b;
+    --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Oriya', 'Arial', sans-serif;
+}
+
+body {
+    background: var(--light-color);
+    color: var(--text-dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    opacity: 0.05;
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border-radius: 7px;
+    border: 2px solid var(--light-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e64d2e, #00b7e6);
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    animation: bounceIn 1.2s ease-out;
+}
+
+nav {
+    background: var(--secondary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+nav a i {
+    margin-right: 0.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.article {
+    background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 1s ease-out;
+}
+
+.article h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.article h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.article p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.article ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article ul li {
+    font-size: 1.2rem;
+    color: #444;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article ul li::before {
+    content: '\f0c1';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    z-index: 99;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2) rotate(180deg);
+    box-shadow: 0 12px 24px rgba(0, 212, 255, 0.6);
+}
+
+.dark-mode {
+    background: var(--dark-color);
+    color: var(--text-light);
+}
+
+.dark-mode .article {
+    background: linear-gradient(180deg, #1e2529 0%, #12171b 100%);
+}
+
+.dark-mode .article p, .dark-mode .article ul li {
+    color: #ccc;
+}
+
+.dark-mode .article h2, .dark-mode .article h3 {
+    color: var(--accent-color);
+}
+
+.dark-mode nav {
+    background: #1a1e23;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #1a1e23;
+}
+
+footer {
+    background: linear-gradient(180deg, var(--secondary-color), #051b26);
+    color: var(--text-light);
+    text-align: center;
+    padding: 4rem 1rem;
+    clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+footer p {
+    margin-bottom: 1.8rem;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: translateY(-8px) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin: 2rem 1rem;
+    }
+
+    .article {
+        padding: 2rem;
+    }
+
+    .article h2 {
+        font-size: 1.8rem;
+    }
+
+    .article h3 {
+        font-size: 1.3rem;
+    }
+
+    .theme-toggle {
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .article p, .article ul li {
+        font-size: 1rem;
+    }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<body>
+    <header>
+        <h1><i class="fas fa-shield-alt"></i> ଗୋପନୀୟତା ନୀତି</h1>
+    </header>
+
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <div class="article">
+            <h2>ଆମର ଗୋପନୀୟତା ନୀତି</h2>
+            <p>ଓଡ଼ିଆଟିଚ୍ (<a href="https://odiateach.netlify.app">odiateach.netlify.app</a>) ଆପଣଙ୍କ ଗୋପନୀୟତାକୁ ଅତ୍ୟନ୍ତ ଗୁରୁତ୍ୱ ଦେଇଥାଏ। ଏହି ଗୋପନୀୟତା ନୀତି ଆମେ କିପରି ଆପଣଙ୍କ ତଥ୍ୟ ସଂଗ୍ରହ କରୁଛୁ, ବ୍ୟବହାର କରୁଛୁ ଏବଂ ସୁରକ୍ଷା ଦେଉଛୁ ତାହା ବିଷୟରେ ବର୍ଣ୍ଣନା କରେ। ଆମେ ଓଡ଼ିଆ ସାହିତ୍ୟ ଓ ସଂସ୍କୃତିକୁ ପ୍ରୋତ୍ସାହନ ଦେବା ପାଇଁ ଉତ୍ସର୍ଗୀକୃତ, ଏବଂ ଆପଣଙ୍କ ବିଶ୍ୱାସ ଆମ ପାଇଁ ମୂଲ୍ୟବାନ।</p>
+
+            <h3>ଆମେ କେଉଁ ତଥ୍ୟ ସଂଗ୍ରହ କରୁଛୁ?</h3>
+            <p>ଆମେ ନିମ୍ନଲିଖିତ ତଥ୍ୟ ସଂଗ୍ରହ କରିପାରୁଛୁ:</p>
+            <ul>
+                <li><strong>ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ:</strong> ଯେପରି ନାମ, ଇମେଲ ଠିକଣା, ଏବଂ ଆପଣ ଆମର ଯୋଗାଯୋଗ ଫର୍ମ ମାଧ୍ୟମରେ ପ୍ରଦାନ କରୁଥିବା ଅନ୍ୟାନ୍ୟ ବିବରଣୀ।</li>
+                <li><strong>ବ୍ୟବହାର ତଥ୍ୟ:</strong> ଆପଣ ଆମ ସାଇଟ୍ ସହ କିପରି ଯୋଗାଯୋଗ କରୁଛନ୍ତି, ଯେପରି ପଠାଯାଇଥିବା ପୃଷ୍ଠା, ଆଇପି ଠିକଣା, ଏବଂ ବ୍ରାଉଜର ତଥ୍ୟ।</li>
+                <li><strong>କୁକିଜ୍:</strong> ଆମେ କୁକିଜ୍ ଏବଂ ସମାନ ଜ୍ଞାନକୌଶଳ ବ୍ୟବହାର କରି ଆପଣଙ୍କ ଅଭିଜ୍ଞତାକୁ ଉନ୍ନତ କରୁଛୁ (ଯେପରି ଥିମ୍ ପସନ୍ଦ ସଂରକ୍ଷଣ)।</li>
+            </ul>
+
+            <h3>ଆମେ ତଥ୍ୟ କିପରି ବ୍ୟବହାର କରୁଛୁ?</h3>
+            <p>ଆମେ ସଂଗୃହୀତ ତଥ୍ୟକୁ ନିମ୍ନଲିଖିତ ଉଦ୍ଦେଶ୍ୟରେ ବ୍ୟବହାର କରୁଛୁ:</p>
+            <ul>
+                <li>ଆମର ସାଇଟ୍ ଏବଂ ସେବାଗୁଡ଼ିକୁ ଉନ୍ନତ କରିବା ପାଇଁ।</li>
+                <li>ଆପଣଙ୍କ ପ୍ରଶ୍ନ କିମ୍ବା ମନ୍ତବ୍ୟର ଉତ୍ତର ଦେବା ପାଇଁ।</li>
+                <li>ଆପଣଙ୍କ ଅଭିଜ୍ଞତାକୁ ବ୍ୟକ୍ତିଗତ କରିବା ପାଇଁ (ଯେପରି ଡାର୍କ ମୋଡ୍ ପସନ୍ଦ)।</li>
+                <li>ଆମ ସାଇଟ୍ର ବ୍ୟବହାର ବିଶ୍ଳେଷଣ କରିବା ପାଇଁ (ଯେପରି ଗୁଗଲ୍ ଆନାଲିଟିକ୍ସ ମାଧ୍ୟମରେ)।</li>
+            </ul>
+
+            <h3>ତଥ୍ୟ ସୁରକ୍ଷା</h3>
+            <p>ଆମେ ଆପଣଙ୍କ ତଥ୍ୟକୁ ସୁରକ୍ଷିତ ରଖିବା ପାଇଁ ଉପଯୁକ୍ତ ଜ୍ଞାନକୌଶଳ ଓ ଆଡ଼ମିନିଷ୍ଟ୍ରେଟିଭ୍ ପଦକ୍ଷେପ ଗ୍ରହଣ କରୁଛୁ। ତଥାପି, ଇଣ୍ଟରନେଟ୍ ଆଧାରିତ ଡାଟା ଟ୍ରାନ୍ସମିସନ୍ ସମ୍ପୂର୍ଣ୍ଣ ସୁରକ୍ଷିତ ହୋଇପାରେ ନାହିଁ, ତେଣୁ ଆମେ ସମ୍ପୂର୍ଣ୍ଣ ସୁରକ୍ଷାର ଗ୍ୟାରେଣ୍ଟି ଦେଇପାରିବୁ ନାହିଁ।</p>
+
+            <h3>ତୃତୀୟ ପକ୍ଷ ସେୟାରିଂ</h3>
+            <p>ଆମେ ଆପଣଙ୍କ ବ୍ୟକ୍ତିଗତ ତଥ୍ୟକୁ ବିକ୍ରୟ କିମ୍ବା ସେୟାର କରୁନାହୁଁ। ତଥାପି, ଆମେ ନିମ୍ନଲିଖିତ କାରଣରୁ ତୃତୀୟ ପକ୍ଷ ସହ ତଥ୍ୟ ସେୟାର କରିପାରୁଛୁ:</p>
+            <ul>
+                <li>ଆଇନଗତ ଆବଶ୍ୟକତା ପୂରଣ କରିବା ପାଇଁ।</li>
+                <li>ସାଇଟ୍ ସେବା ପ୍ରଦାନ କରିବା ପାଇଁ (ଯେପରି ଆନାଲିଟିକ୍ସ ସେବା)।</li>
+            </ul>
+
+            <h3>ଆପଣଙ୍କ ଅଧିକାର</h3>
+            <p>ଆପଣଙ୍କର ନିମ୍ନଲିଖିତ ଅଧିକାର ରହିଛି:</p>
+            <ul>
+                <li>ଆପଣଙ୍କ ତଥ୍ୟର ପ୍ରବେଶ କିମ୍ବା ସଂଶୋଧନ ପାଇଁ ଅନୁରୋଧ କରିବା।</li>
+                <li>ଆପଣଙ୍କ ତଥ୍ୟ ମେଟାଇବା ପାଇଁ ଅନୁରୋଧ କରିବା।</li>
+                <li>କୁକିଜ୍ ବ୍ୟବହାରକୁ ଅସ୍ୱୀକାର କରିବା (ଆପଣଙ୍କ ବ୍ରାଉଜର ସେଟିଂସ ମାଧ୍ୟମରେ)।</li>
+            </ul>
+            <p>ଏହି ଅଧିକାର ବ୍ୟବହାର କରିବା ପାଇଁ, ଦୟାକରି ଆମ ସହ <a href="mailto:odiateach@gmail.com">odiateach@gmail.com</a> ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ କରନ୍ତୁ।</p>
+
+            <h3>ନୀତିରେ ପରିବର୍ତ୍ତନ</h3>
+            <p>ଆମେ ଏହି ଗୋପନୀୟତା ନୀତିକୁ ସମୟ ସମୟରେ ଅପଡେଟ୍ କରିପାରୁଛୁ। କୌଣସି ପରିବର୍ତ୍ତନ ଏହି ପୃଷ୍ଠାରେ ପ୍ରକାଶିତ ହେବ ଏବଂ ଆମେ ଆପଣଙ୍କୁ ଇମେଲ ମାଧ୍ୟମରେ ସୂଚନା ଦେଇପାରୁଛୁ।</p>
+
+            <h3>ଯୋଗାଯୋଗ</h3>
+            <p>ଯଦି ଆପଣଙ୍କର ଗୋପନୀୟତା ନୀତି ସମ୍ପର୍କରେ କୌଣସି ପ୍ରଶ୍ନ ଅଛି, ଦୟାକରି ଆମ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ:</p>
+            <ul>
+                <li><strong>ଇମେଲ:</strong> <a href="mailto:odiateach@gmail.com">odiateach@gmail.com</a></li>
+                <li><strong>ଯୋଗାଯୋଗ ପୃଷ୍ଠା:</strong> <a href="contact.html">ଯୋଗାଯୋଗ ଫର୍ମ</a></li>
+            </ul>
+            <p>ଆମେ ଆପଣଙ୍କ ବିଶ୍ୱାସକୁ ମୂଲ୍ୟ ଦେଉଛୁ ଏବଂ ଆପଣଙ୍କ ଗୋପନୀୟତା ସୁରକ୍ଷା ପାଇଁ ପ୍ରତିବଦ୍ଧ!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com/OdiaTeach" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/OdiaTeach" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/OdiaTeach" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@OdiaTeach" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© ୨୦୨୫ ଓଡ଼ିଆଟିଚ୍ | ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ</p>
+        <p><i class="fas fa-code"></i> ଓଡ଼ିଆ ସାହିତ୍ୟ ପାଇଁ <i class="fas fa-heart"></i> ସହିତ ନିର୍ମିତ</p>
+    </footer>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        // Load navbar dynamically
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+        }
+    </script>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>
+</body>
+</html>

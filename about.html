@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଆମ ବିଷୟରେ - ଓଡ଼ିଆଟିଚ୍</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff5733;
+            --secondary-color: #0a2e3d;
+            --accent-color: #00d4ff;
+            --light-color: #f8f9fb;
+            --dark-color: #0f1419;
+            --text-light: #ffffff;
+            --text-dark: #1f252b;
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Oriya', 'Arial', sans-serif;
+        }
+
+        body {
+            background: var(--light-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 7px;
+            border: 2px solid var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #e64d2e, #00b7e6);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 2rem;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            animation: bounceIn 1.2s ease-out;
+        }
+
+        nav {
+            background: var(--secondary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        nav a i {
+            margin-right: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .article {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .article h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .article p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .article p strong {
+            color: var(--primary-color);
+        }
+
+        .article ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article ul li {
+            font-size: 1.2rem;
+            color: #444;
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article ul li::before {
+            content: '\f02d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            z-index: 99;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.2) rotate(180deg);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.6);
+        }
+
+        .dark-mode {
+            background: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .dark-mode .article {
+            background: linear-gradient(180deg, #1e2529 0%, #12171b 100%);
+        }
+
+        .dark-mode .article p, .dark-mode .article ul li {
+            color: #ccc;
+        }
+
+        .dark-mode .article h2 {
+            color: var(--accent-color);
+        }
+
+        .dark-mode nav {
+            background: #1a1e23;
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1a1e23;
+        }
+
+        footer {
+            background: linear-gradient(180deg, var(--secondary-color), #051b26);
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 1rem;
+            clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        footer p {
+            margin-bottom: 1.8rem;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-8px) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .container {
+                margin: 2rem 1rem;
+            }
+
+            .article {
+                padding: 2rem;
+            }
+
+            .article h2 {
+                font-size: 1.8rem;
+            }
+
+            .theme-toggle {
+                bottom: 30px;
+                right: 30px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .article p, .article ul li {
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-info-circle"></i> ଆମ ବିଷୟରେ</h1>
+    </header>
+
+    <div class="container">
+        <div class="article">
+            <h2>ଓଡ଼ିଆଟିଚ୍ କ’ଣ?</h2>
+            <p><strong>ଓଡ଼ିଆଟିଚ୍</strong> ହେଉଛି ଓଡ଼ିଶାର ସମୃଦ୍ଧ ସାହିତ୍ୟିକ ଐତିହ୍ୟକୁ ପ୍ରୋତ୍ସାହନ ଦେବା ପାଇଁ ଏକ ଡିଜିଟାଲ ପ୍ଲାଟଫର୍ମ। ଆମେ ଓଡ଼ିଆ ସାହିତ୍ୟର ଅମର କୃତି ଯଥା କବିତା, ଗଳ୍ପ, ଉପନ୍ୟାସ, ନାଟକ, ପ୍ରବନ୍ଧ ଏବଂ ଜୀବନୀକୁ ବିଶ୍ୱବ୍ୟାପୀ ପାଠକଙ୍କ ପାଖରେ ପହଞ୍ଚାଇବାକୁ ଲକ୍ଷ୍ୟ ରଖିଛୁ। ଏହି ପ୍ଲାଟଫର୍ମ ଓଡ଼ିଆ ଭାଷା ଓ ସଂସ୍କୃତି ପ୍ରତି ଅନୁରକ୍ତ ଏକ ଦଳ ଦ୍ୱାରା ପରିଚାଳିତ, ଯେଉଁମାନେ ଏହାର ସୌନ୍ଦର୍ଯ୍ୟ ଓ ଗଭୀରତାକୁ ସଂରକ୍ଷଣ ଏବଂ ପ୍ରଚାର କରିବାକୁ ଉତ୍ସର୍ଗୀକୃତ।</p>
+
+            <h2>ଆମର ଲକ୍ଷ୍ୟ</h2>
+            <p>ଆମର ମୂଳ ଲକ୍ଷ୍ୟ ହେଉଛି ଓଡ଼ିଆ ସାହିତ୍ୟକୁ ଛାତ୍ର, ଶିକ୍ଷକ, ଗବେଷକ ଏବଂ ସାହିତ୍ୟ ପ୍ରେମୀଙ୍କ ପାଇଁ ସହଜ ଓ ଆକର୍ଷଣୀୟ କରିବା। ଆମେ ଚାହୁଁଛୁ ଯେ ନୂଆ ପିଢ଼ି ଓଡ଼ିଆ ସାହିତ୍ୟର ଅମୂଲ୍ୟ ସମ୍ପଦ ସହ ସଂନାଦ କରି ନିଜ ସାଂସ୍କୃତିକ ମୂଳ ପ୍ରତି ଗର୍ବ ଅନୁଭବ କରନ୍ତୁ।</p>
+
+            <h2>ଆମେ କ’ଣ ପ୍ରଦାନ କରୁ?</h2>
+            <ul>
+                <li><strong>କବି ଓ ଲେଖକଙ୍କ ଜୀବନୀ:</strong> ଓଡ଼ିଶାର ବିଖ୍ୟାତ ସାହିତ୍ୟିକମାନଙ୍କ ଜୀବନ ଓ କର୍ମ ବିଷୟରେ ବିସ୍ତୃତ ତଥ୍ୟ।</li>
+                <li><strong>କବିତା ଓ ଗଳ୍ପ:</strong> କାଳଜୟୀ ଓଡ଼ିଆ କବିତା ଓ ଗଳ୍ପର ସଂକଳନ।</li>
+                <li><strong>ଉପନ୍ୟାସ ଓ ନାଟକ:</strong> ଓଡ଼ିଆ ସାହିତ୍ୟର ମାଷ୍ଟାରପିସ୍ ଉପନ୍ୟାସ ଓ ନାଟକର ସମୀକ୍ଷା ଏବଂ ଅଂଶବିଶେଷ।</li>
+                <li><strong>ପ୍ରବନ୍ଧ ଓ ସମାଲୋଚନା:</strong> ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି ଉପରେ ଗଭୀର ବିଶ୍ଳେଷଣ।</li>
+                <li><strong>ଶିକ୍ଷାଭିତ୍ତିକ ସାମଗ୍ରୀ:</strong> ଛାତ୍ର ଓ ଶିକ୍ଷକଙ୍କ ପାଇଁ ସାହିତ୍ୟ ଅଧ୍ୟୟନ ସହାୟକ ସମ୍ବଳ।</li>
+            </ul>
+
+            <h2>ଆମର ଦଳ</h2>
+            <p>ଓଡ଼ିଆଟିଚ୍ ଏକ ଉତ୍ସାହୀ ଓ ଦକ୍ଷ ଦଳ ଦ୍ୱାରା ପରିଚାଳିତ, ଯେଉଁମାନେ ଓଡ଼ିଆ ଭାଷା ଓ ସାହିତ୍ୟର ସଂରକ୍ଷଣ ଏବଂ ପ୍ରସାର ପାଇଁ କାର୍ଯ୍ୟ କରୁଛନ୍ତି। ଆମେ ସାହିତ୍ୟ ବିଶେଷଜ୍ଞ, ଶିକ୍ଷାବିତ୍, ଲେଖକ ଏବଂ ଟେକ୍ନୋଲୋଜି ବିଶେଷଜ୍ଞଙ୍କ ଏକ ସମ୍ମିଶ୍ରଣ, ଯେଉଁମାନେ ଏକତ୍ର ମିଳିତ ଭାବେ ଏହି ପ୍ଲାଟଫର୍ମକୁ ସଫଳ କରିଛନ୍ତି।</p>
+
+            <h2>ଆମ ସହ ଯୋଗାଯୋଗ</h2>
+            <p>ଆମେ ଆପଣଙ୍କ ମତାମତ ଓ ପରାମର୍ଶକୁ ସ୍ୱାଗତ କରୁଛୁ। ଯଦି ଆପଣ ଓଡ଼ିଆ ସାହିତ୍ୟ ବିଷୟରେ ଅଧିକ ଜାଣିବାକୁ ଚାହୁଁଛନ୍ତି କିମ୍ବା ଆମ ସହ ଯୋଗଦାନ କରିବାକୁ ଇଚ୍ଛୁକ, ଦୟାକରି ଆମର <a href="contact.html">ଯୋଗାଯୋଗ ପୃଷ୍ଠା</a> ମାଧ୍ୟମରେ ଆମ ସହ ସମ୍ପର୍କ କରନ୍ତୁ।</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© ୨୦୨୫ ଓଡ଼ିଆଟିଚ୍ | ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ</p>
+        <p><i class="fas fa-code"></i> ଓଡ଼ିଆ ସାହିତ୍ୟ ପାଇଁ <i class="fas fa-heart"></i> ସହିତ ନିର୍ମିତ</p>
+    </footer>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+        }
+       
+    </script>
+     <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>
+</body>
+</html>
