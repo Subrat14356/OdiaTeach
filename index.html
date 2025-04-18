@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odia Literature | Odia Sahitya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff5733;
+            --secondary-color: #0a2e3d;
+            --accent-color: #00d4ff;
+            --light-color: #f8f9fb;
+            --dark-color: #0f1419;
+            --text-light: #ffffff;
+            --text-dark: #1f252b;
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Oriya', 'Arial', sans-serif;
+        }
+
+        body {
+            background: var(--light-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 7px;
+            border: 2px solid var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #e64d2e, #00b7e6);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-menu li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .navbar-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .navbar-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotateGlow 15s linear infinite;
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            animation: bounceIn 1.2s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .search-bar {
+            margin: 3rem auto;
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.8s forwards;
+        }
+
+        .search-bar input {
+            padding: 1.2rem 2.5rem 1.2rem 5rem;
+            width: 100%;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 60px;
+            box-shadow: var(--shadow);
+            background: rgba(255, 255, 255, 0.92);
+            transition: var(--transition);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.7);
+            transform: scale(1.03);
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .search-bar input:focus + i {
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            z-index: 99;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.2) rotate(180deg);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.6);
+        }
+
+        .poets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 3rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .poet-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f2f5 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        .poet-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .poet-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        .poet-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--primary-color);
+            filter: brightness(95%);
+            transition: var(--transition);
+        }
+
+        .poet-card:hover img {
+            filter: brightness(100%) contrast(1.05);
+        }
+
+        .poet-card h3 {
+            margin: 1.8rem 0 0.8rem;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .poet-card p {
+            color: #444;
+            padding: 0 1.8rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .poet-card a {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .poet-card a:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .poet-card a i {
+            margin-left: 10px;
+        }
+
+        .poet-card .icon-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .poet-card .icon-container i {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .poet-card .icon-container i:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .dark-mode {
+            background: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .dark-mode .navbar {
+            background: linear-gradient(135deg, #1a1e23 0%, var(--primary-color) 100%);
+        }
+
+        .dark-mode .poet-card {
+            background: linear-gradient(180deg, #1e2529 0%, #12171b 100%);
+        }
+
+        .dark-mode .poet-card p {
+            color: #ccc;
+        }
+
+        .dark-mode .poet-card h3 {
+            color: var(--accent-color);
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: #1a1e23;
+        }
+
+        .dark-mode .search-bar input {
+            background: #2a2f35;
+            color: var(--text-light);
+        }
+
+        .dark-mode .poet-card img {
+            filter: brightness(90%);
+        }
+
+        .footer {
+            background: linear-gradient(180deg, var(--secondary-color), #051b26);
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+            clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .footer p {
+            margin-bottom: 1.8rem;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: translateY(-8px) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+            }
+
+            .navbar-menu.active {
+                left: 0;
+            }
+
+            .navbar-menu li {
+                margin: 1.5rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .poets-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .theme-toggle {
+                bottom: 30px;
+                right: 30px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .search-bar input {
+                padding: 1rem 2rem 1rem 4rem;
+                font-size: 1rem;
+            }
+
+            .poet-card img {
+                height: 250px;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-card {
+            animation: cardPop 0.8s ease-out forwards;
+        }
+
+        @keyframes cardPop {
+            0% { opacity: 0; transform: translateY(100px) scale(0.95); }
+            60% { opacity: 0.8; transform: translateY(-10px) scale(1.02); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7177604928905730"
+     crossorigin="anonymous"></script>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-book-open"></i>
+            <span>Odia Literature</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar-menu" id="navbarMenu">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Poets</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Works</a></li>
+            <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1><i class="fas fa-book-reader"></i> Odia Literature</h1>
+        <p>Explore the rich literary heritage of Odisha. Discover the immortal works of poets and their biographies, and embark on a cultural journey.</p>
+    </div>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search for poets, poems or books...">
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="poets-grid">
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Jagannath Das.jpeg" alt="Jagannath Das">
+            <h3>Jagannath Das</h3>
+            <p>Author of 'Odia Bhagabata'. One of the Panchasakha poets. (1490-1550)</p>
+            <a href="Jagannath Das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Balarama Das.jpg" alt="Balarama Das">
+            <h3>Balarama Das</h3>
+            <p>Author of 'Lakshmi Purana'. One of the Panchasakha poets. (1470-1550)</p>
+            <a href="balarama-das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Achyutananda Das.webp" alt="Achyutananda Das">
+            <h3>Achyutananda Das</h3>
+            <p>Author of 'Harivamsa' and 'Sunya Samhita'. Spiritual poet of Panchasakha. (1480-1550)</p>
+            <a href="achyutananda-das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Ananta Das.jpg" alt="Ananta Das">
+            <h3>Ananta Das</h3>
+            <p>Author of 'Hetu Udaya Bhagabata'. Devotional poet of Panchasakha. (1480-1550)</p>
+            <a href="ananta-das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/jasobanta-das.jpg" alt="Jasobanta Das">
+            <h3>Jasobanta Das</h3>
+            <p>Author of 'Govinda Chandrika'. Knowledge-oriented poet of Panchasakha. (1480-1550)</p>
+            <a href="jasobanta-das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/kalindi-charan-panigrahi.jpg" alt="Kalindi Charan Panigrahi">
+            <h3>Kalindi Charan Panigrahi</h3>
+            <p>Author of 'Matira Manisha'. Pioneer of modern Odia novels. (1901-1991)</p>
+            <a href="kalindi-charan-panigrahi.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Nandakishore Bala.jpeg" alt="Nandakishore Bala">
+            <h3>Nandakishore Bala</h3>
+            <p>Author of 'Pallichitra' and 'Nana Baya Geeta'. Pioneer of children's literature. (1875-1928)</p>
+            <a href="nandakishore-bala.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Godabarisa Mishra.jpg" alt="Godabarisa Mishra">
+            <h3>Godabarisa Mishra</h3>
+            <p>Author of 'Atitara Kahani' and 'Muktipathe'. Social reformer. (1886-1956)</p>
+            <a href="godabarisa-mishra.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Madhusudan Rao.jpg" alt="Madhusudan Rao">
+            <h3>Madhusudan Rao</h3>
+            <p>Author of 'Basanta Gatha' and 'Usha'. Pioneer of modern Odia poetry. (1853-1912)</p>
+            <a href="Madhusudan Rao.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Bhima-Bhoi.gif" alt="Bhima Bhoi">
+            <h3>Bhima Bhoi</h3>
+            <p>Author of 'Stuti Chintamani'. Preacher of Mahima Dharma. (1850-1895)</p>
+            <a href="Bhima Bhoi.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Mayadhar Mansingh.jpg" alt="Mayadhar Mansingh">
+            <h3>Mayadhar Mansingh</h3>
+            <p>Author of 'Konarka' and 'Chitralekha'. Major voice in modern Odia poetry. (1905-1973)</p>
+            <a href="Mayadhar Mansingh.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Abhimanyu Samantsinghar.jpg" alt="Abhimanyu Samantsinghar">
+            <h3>Abhimanyu Samantsinghar</h3>
+            <p>Author of 'Bagha Gita' and 'Kala Manikare'. Major voice in modern Odia poetry. (1922-2013)</p>
+            <a href="Abhimanyu Samantsinghar.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/laxmikanta-mohapatra.png" alt="Laxmikanta Mohapatra">
+            <h3>Laxmikanta Mohapatra</h3>
+            <p>Author of 'Kanaka Mukti' and 'Bandi Samrat'. Poet of patriotism and social consciousness. (1888-1953)</p>
+            <a href="Laxmikanta Mohapatra.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Portrait_of_Gourishankar_Ray.jpg" alt="Gouri Sankar Ray">
+            <h3>Gouri Sankar Ray</h3>
+            <p>Contributor to Odia literature and journalism. Editor of 'Samaja' newspaper. (1849-1917)</p>
+            <a href="Gouri Sankar Ray .html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Kuntala Kumari Sabat.jpg" alt="Kuntala Kumari Sabat">
+            <h3>Kuntala Kumari Sabat</h3>
+            <p>Author of 'Anatha' and 'Kalibou'. Poet of women empowerment and social reform. (1901-1938)</p>
+            <a href="Kuntala Kumari Sabat.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/radanath.jpg" alt="Radhanath Ray">
+            <h3>Radhanath Ray</h3>
+            <p>Author of 'Chilika', 'Kedara Gouri' and 'Mahayatra'. Pioneer of modern Odia poetry. (1848-1908)</p>
+            <a href="radanath.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/gagadhar.jpg" alt="Gangadhar Meher">
+            <h3>Gangadhar Meher</h3>
+            <p>Author of 'Tapaswini' and 'Pranaya Ballari'. Poet of nature and patriotism. (1862-1924)</p>
+            <a href="ga.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Kabisurya-Granthabali.jpg" alt="Baladev Rath">
+            <h3>Baladev Rath</h3>
+            <p>Author of 'Kishora Chandranan' and 'Musha'. Major poet of Odia lyrical poetry. (1789-1845)</p>
+            <a href="Baladev Rath.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Sarala Das.jpg" alt="Sarala Das">
+            <h3>Sarala Das</h3>
+            <p>Author of 'Odia Mahabharata'. First poet of Odia literature. (15th Century)</p>
+            <a href="sa.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Upendra Bhanja.jpg" alt="Upendra Bhanja">
+            <h3>Upendra Bhanja</h3>
+            <p>Author of 'Baidehisha Bilasa' and 'Labanyabati'. Major poet of ornamental poetry. (1670-1740)</p>
+            <a href="up.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/Madhusudan Das.jpg" alt="Madhusudan Das">
+            <h3>Madhusudan Das</h3>
+            <p>Author of 'Utkala Santana' and 'Jatiya Gita'. Maker of modern Odisha. (1848-1934)</p>
+            <a href="Madhusudan Das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/gopandhu.jpg" alt="Gopabandhu Das">
+            <h3>Gopabandhu Das</h3>
+            <p>Author of 'Bandhanara Hara' and 'Abhaginira Swara'. Known as Utkalamani. (1877-1928)</p>
+            <a href="gopabandhu-das.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/fakir_mohan_senapat.jpg" alt="Fakir Mohan Senapati">
+            <h3>Fakir Mohan Senapati</h3>
+            <p>Author of 'Chha Mana Atha Guntha' and 'Lachhama'. Father of Odia literature. (1843-1918)</p>
+            <a href="Fakir Mohan Senapati.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+
+        <div class="poet-card">
+            <div class="icon-container">
+                <i class="fas fa-book"></i>
+            </div>
+            <img src="img/sachidananda routray.jpg" alt="Sachidananda Routray">
+            <h3>Sachidananda Routray</h3>
+            <p>Author of 'Baji Rout' and 'Pallishree'. Jnanpith Award winner. (1916-2004)</p>
+            <a href="sachidananda-routray.html"><i class="fas fa-arrow-right"></i> View More</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© 2025 Odia Literature. All Rights Reserved.</p>
+        <p><i class="fas fa-code"></i> Built for Odia Literature with <i class="fas fa-heart"></i></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navbarMenu = document.getElementById('navbarMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navbarMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.poet-card');
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                card.style.display = (name.includes(query) || desc.includes(query)) ? 'block' : 'none';
+            });
+        });
+
+        // Intersection Observer for card animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible', 'animate-card');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.poet-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
